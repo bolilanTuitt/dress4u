@@ -10,18 +10,26 @@
 		<div id="navbar-nav" class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.php"> Home </a>
+					<a class="nav-link" href="../views/home.php"> Home </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#"> Catalog </a>
+					<a class="nav-link" href="../views/catalog.php"> Catalog </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#"> Cart 🛒<span class="badge text-danger" id="cart-count">0</span></a>
+					<a class="nav-link" href="#"> Cart 🛒<span class="badge text-danger" id="cart-count">
+						<?php 
+							if (isset($_SESSION['cart'])) {
+								echo array_sum($_SESSION['cart']);
+							}else{
+								echo "0";
+							}
+						 ?>
+					</span></a>
 				</li>
 
-			<?php if(isset($_SESSION["logged_in_user"])): ?>
+			<?php if(isset($_SESSION['user'])): ?>
 				<li class="nav-item">
 					<a class="nav-link" href="../controllers/logout.php">Logout</a>
 					
@@ -31,11 +39,11 @@
 
 			
 				<li class="nav-item">
-					<a class="nav-link" href="#"> Sign Up </a>
+					<a class="nav-link" href="../views/signup.php"> Sign Up </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#"> Login </a>
+					<a class="nav-link" href="../views/login.php"> Login </a>
 				</li>
 
 			<?php endif; ?>
