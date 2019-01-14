@@ -28,7 +28,7 @@
 			
 		</form>
 			<div class="text-center py-4">
-				<button id="login" type="button" class="btn btn-secondary" >Login</button>
+				<button id="login" type="button" class="btn btn-secondary">Login</button>
 				<a href="./signup.php" class="btn btn-primary">Register</a>
 				
 			</div>

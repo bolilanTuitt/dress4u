@@ -10,15 +10,15 @@
 		<div id="navbar-nav" class="collapse navbar-collapse">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="../views/home.php"> Home </a>
+					<a class="nav-link" href="./home.php"> Home </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="../views/catalog.php"> Catalog </a>
+					<a class="nav-link" href="./catalog.php"> Catalog </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="#"> Cart 🛒<span class="badge text-danger" id="cart-count">
+					<a class="nav-link" href="./cart.php"> Cart 🛒<span class="badge text-danger" id="cart-count">
 						<?php 
 							if (isset($_SESSION['cart'])) {
 								echo array_sum($_SESSION['cart']);
@@ -39,11 +39,11 @@
 
 			
 				<li class="nav-item">
-					<a class="nav-link" href="../views/signup.php"> Sign Up </a>
+					<a class="nav-link" href="./signup.php"> Sign Up </a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="../views/login.php"> Login </a>
+					<a class="nav-link" href="./login.php"> Login </a>
 				</li>
 
 			<?php endif; ?>

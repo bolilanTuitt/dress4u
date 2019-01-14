@@ -87,7 +87,7 @@
 
 								<!-- add to cart -->
 								<div class="card-footer">
-									<input type="number" class="form-control" value="1" name="">
+									<input type="number" class="form-control" value="1" min="0">
 									<button type="submit" class="btn btn-block btn-outline-primary add-to-cart" data-id="<?php echo $item['id']; ?>"> Add to Cart</button>
 									
 								</div>

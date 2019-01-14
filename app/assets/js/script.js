@@ -140,14 +140,15 @@ $(document).ready( () => {
 				'password':password
 			},
 			"success":(data) =>{
-				if (data == "login failed") {
+				if (data == "login_failed") {
 					$("#username").next().html("Please provide correct credentials");
 				}else{
 					window.location.replace("../views/home.php"); //windows location is used when in js while header(Location..) is used for php
 				}
 			}
 		});
-	})
+	});
+
 
 
 	//prep for add to cart
@@ -167,12 +168,89 @@ $(document).ready( () => {
 			"method" : "POST",
 			"data": {
 				'item_id': item_id,
-				'item_quantity':item_quantity		
+				'item_quantity':item_quantity,
+				'update_from_cart_page':0
 			},
 			"success" : (data) =>{
 				$("#cart-count").html(data);
 			}
-		})
-	})
+		});
+
+	});
+
+
+		function getTotal(){
+			let total = 0;
+			$(".item_subtotal").each(function(e){
+				total += parseFloat($(this).html());
+			});
+
+			$("#total_price").html(total.toFixed(2));
+		}
+
+
+
+
+		//edit cart
+		$(".item_quantity>input").on("input", (e) =>{
+
+
+			let item_id = $(e.target).attr('data-id');
+			let quantity = parseInt($(e.target).val());
+			let price = parseFloat($(e.target).parents('tr').find(".item_price").html());
+
+			subtotal = quantity * price;
+			$(e.target).parents('tr').find('.item_subtotal').html(subtotal.toFixed(2));
+
+			getTotal();
+
+			$.ajax({
+				"method": "POST",
+				"url": "../controllers/update_cart.php",
+				"data": {
+					'item_id': item_id,
+					'item_quantity': quantity,
+					'update_from_cart_page': 1
+				},
+				"success": (data) =>{
+					//alert('data');
+					$('#cart-count').html(data);
+				}
+			});
+
+
+		});
+	
+
+		//delete button
+
+		$(document).on("click", '.item-remove', (e) =>{
+			e.preventDefault();
+			e.stopPropagation();
+
+
+			let item_id = $(e.target).attr('data-id');
+
+			$.ajax({
+				"method": "POST",
+				"url": "../controllers/update_cart.php",
+				"data": {
+					'item_id': item_id,
+					'item_quantity':0
+				},
+				"beforeSend": () =>{
+					return confirm("Are you sure you want to delete?");
+				},
+				"success": (data) =>{
+					$(e.target).parents('tr').fadeOut();
+					$("#cart-count").html(data);
+					getTotal();
+					window.location.replace("../views/cart.php");
+				}
+			});
+		});
+
 
 });
+
+ 
