@@ -2,6 +2,8 @@
 
 
 <?php function get_page_content() {
+	if (isset($_SESSION['user']) && $_SESSION['user']['roles_id']==2) {
+
 	global $conn;
 ?>
 
@@ -13,16 +15,16 @@
 	<h1>Hello, This is your checkout page</h1>
 	<form method="POST" action="../controllers/placeorder.php">
 		<div class="container mt-4">
-			<div class="row">
+			<div class="row mx-0">
 				<div class="col-8">
 					<div class="form-group">
-						<h4>Checkout Address:</h4>
+						<h4>Shipping Address:</h4>
 						<input type="text" class="form-control" name="addressLine1" value="<?php echo $_SESSION['user']['address']; ?>">
 					</div>
 				</div><!-- end col -->
 			</div><!-- end row -->
 			<h4>Order Summary</h4>
-			<div class="row">
+			<div class="row mx-0">
 				<div class="col-sm-6">
 					<p>Total</p>
 				</div>
@@ -49,7 +51,7 @@
 			<hr>
 			<button type="submit" class="btn btn-primary btn-block">Place Order Now</button>
 
-			<div class="row cart-items mt-4">
+			<div class="row cart-items mt-4 mx-0">
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered text-center" id="cart-items">
 						<thead>
@@ -89,7 +91,10 @@
 		</div> <!-- end container -->
 	</form><!-- end form -->
 
+<?php }else{
 
+	header('Location: ./login.php');
+} ?>
 
 
 <?php } ?>

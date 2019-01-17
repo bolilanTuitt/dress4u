@@ -2,13 +2,14 @@
 
 
 <?php function get_page_content() { 
+	if (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user']['roles_id']==2) {
 
 	global $conn;
 	?>
 
 
 <div class="container my-4 ">
-	<div class="row">
+	<div class="row mx-0">
 		<div class="col-12">
 			<h1>Cart Page</h1>
 		</div>
@@ -96,7 +97,10 @@
 
 </div> <!-- end container -->
 
+<?php }else{
 
+	header('Location ./error.php');
+} ?>
 
 
 

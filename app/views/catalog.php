@@ -1,7 +1,11 @@
 <?php require_once '../partials/template.php'; ?>
 
 
-<?php function get_page_content() {?>
+<?php function get_page_content() {
+	if (!isset($_SESSION['user']) || isset($_SESSION['user']) && $_SESSION['user']['roles_id']==2) {
+		# code...
+	
+	?>
 
 
 <?php require_once '../controllers/connect.php';
@@ -11,7 +15,7 @@
 ?>
 
 <div class="container">
-	<div class="row">
+	<div class="row mx-0">
 		<div class="col-sm-2">
 
 			<!-- display categories -->
@@ -67,10 +71,10 @@
 
 					$items = mysqli_query($conn, $sql2);
 
-					echo "<div class='row'>";
+					echo "<div class='row mx-0'>";
 
 					foreach ($items as $item){ ?> 
-						<div class="col-sm-3">
+						<div class="col-sm-3 my-2">
 							<div class="card h-100">
 								<img class="card-img-top img-fluid imgCard" src="<?php echo $item['image_path'];?>">
 								<div class="card-body">
@@ -79,8 +83,8 @@
 									</h4>
 									<p class="card-text">
 										<?php echo $item['description']; ?>
-										<br>
-										<?php echo $item['price']; ?>
+										<hr>
+										Price: &nbsp <?php echo $item['price']; ?>
 									</p>
 									
 								</div>
@@ -104,6 +108,10 @@
 	</div>
 </div>
 
+<?php }else{
+
+	header('Location: ./error.php');
+} ?>
 
 
 <?php } ?>

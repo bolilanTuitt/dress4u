@@ -14,7 +14,7 @@
 
 
  	<form>
- 		<section class="row">
+ 		<section class="row mx-0">
 			<div class="col-sm-6">
 					
  				<div class="form-group">
