@@ -1,0 +1,30 @@
+
+client id
+AYenWfLc64uM7SMDVBi2hHvDA5JdPFv0cLnP1UrXGPHVNFJjre-6zkel8E35n0wIzitrBxA3I4ufybja
+
+
+
+secret
+EOp5Bd3JYf0WhWb1TCJ660Pf4ujoD22r1yOeVQP8yFTH73ULbGV1n7LDEoDM8CFekj6YP7eHssjGtgX1
+
+
+
+
+// paypal sdk
+https://github.com/paypal/PayPal-PHP-SDK/wiki/Installation
+
+
+
+// composer installation of paypal sdk
+composer require paypal/rest-api-sdk-php:*
+
+
+
+Database: ecomdress4u
+Username: littlemisskdress
+Email: littlemisskdress4u@gmail.com
+
+
+
+littlemisskdress4u@gmail.com
+littlemisskdress4u123

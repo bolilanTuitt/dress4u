@@ -5,10 +5,10 @@
 	if (isset($_SESSION['user']) && $_SESSION['user']['roles_id'] == 1) {
 		# code...
 	
-
+		global $conn;
 
 	?>
-<?php global $conn; ?>
+
 
 <div class="container">
 	<div class="row mx-0">

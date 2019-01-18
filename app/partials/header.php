@@ -13,11 +13,11 @@
 				<?php if(!isset($_SESSION['user']) || (isset($_SESSION['user'])) && ($_SESSION['user']['roles_id'] == 2)){ ?>
 
 				<li class="nav-item">
-					<a class="nav-link" href="./home.php"> Home </a>
+					<a class="nav-link" href="./home.php"> Home |</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="./catalog.php"> Catalog </a>
+					<a class="nav-link" href="./catalog.php"> Catalog |</a>
 				</li>
 
 				<li class="nav-item">
@@ -29,14 +29,22 @@
 								echo "0";
 							}
 						 ?>
-					</span></a>
+					</span>|</a>
 				</li>
 
 			<?php }elseif(isset($_SESSION['user']) && ($_SESSION['user']['roles_id'] == 1)) {?>
 
 
 				<li class="nav-item">
-					<a href="./items.php" class="nav-link">Items</a>
+					<a href="./items.php" class="nav-link">Items |</a>
+					
+				</li>
+				<li class="nav-item">
+					<a href="./orders.php" class="nav-link">Orders |</a>
+					
+				</li>
+				<li class="nav-item">
+					<a href="./users.php" class="nav-link">Users |</a>
 					
 				</li>
 
@@ -45,7 +53,7 @@
 
 			<?php if(isset($_SESSION['user'])): ?>
 				<li class="nav-item">
-					<a class="nav-link" href="./profile.php">Welcome, <?php echo $_SESSION['user']['firstname']; ?></a>
+					<a class="nav-link" href="./profile.php">Welcome, <?php echo $_SESSION['user']['firstname']; ?> |</a>
 					
 				</li>
 
@@ -59,11 +67,11 @@
 
 			
 				<li class="nav-item">
-					<a class="nav-link" href="./signup.php"> Sign Up </a>
+					<a class="nav-link" href="./signup.php"> Sign Up |</a>
 				</li>
 
 				<li class="nav-item">
-					<a class="nav-link" href="./login.php"> Login </a>
+					<a class="nav-link" href="./login.php"> Login</a>
 				</li>
 
 			<?php endif; ?>
