@@ -178,8 +178,13 @@ function generate_new_transaction_number() {
         // ->setReturnUrl('http://localhost:3306/controllers/pay.php?success=true')
         // ->setCancelUrl('http://localhost:3306/controllers/pay.php?success=false');
 
-    ->setReturnUrl('http://localhost/batch19/capstone2/app/controllers/pay.php?success=true')
-        ->setCancelUrl('http://localhost/batch19/capstone2/app/controllers/pay.php?success=false');
+    // ->setReturnUrl('http://localhost/batch19/capstone2/app/controllers/pay.php?success=true')
+    //     ->setCancelUrl('http://localhost/batch19/capstone2/app/controllers/pay.php?success=false');
+
+
+
+    ->setReturnUrl('https://littlemissk-dress4u.herokuapp.com/app/controllers/pay.php?success=true')
+        ->setCancelUrl('https://littlemissk-dress4u.herokuapp.com/app/controllers/pay.php?success=false');
 
     $payment = new Payment();
     $payment->setIntent('sale')
