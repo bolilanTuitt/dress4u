@@ -15,12 +15,22 @@ body{
 
 }
 
-
+.main1{
+    background-color: lightgrey;
+    height: 100vh;
+    background-image: url(../images/shopping.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    
+    
+}
 
 
 .imgCard{
     width: 100%;
-    height: 10vw;
+    height: 30vw;
     object-fit: cover;
 }
 
@@ -32,7 +42,7 @@ body{
 
 .imgCard{
     width: 100%;
-    height: 30vw;
+    height: 50vw;
     object-fit: cover;
 }
 
@@ -47,7 +57,7 @@ body{
 
 .imgCard{
     width: 100%;
-    height: 50vw;
+    height: 70vw;
     object-fit: cover;
 }
 

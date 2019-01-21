@@ -9,7 +9,7 @@ $dbname = 'ecomdress4u';
 // $host = 'localhost';
 // $username = 'root';
 // $password = '';
-// $dbname = 'ecom_db';
+// $dbname = 'test';
 
 
 $conn = mysqli_connect($host, $username, $password, $dbname);
