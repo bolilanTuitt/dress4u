@@ -3,7 +3,7 @@
 
 <?php function get_page_content() {?>
 
-	<div class="container-fluid main1">
+	<div class="container-fluid main1 mt-5">
 		<div class="jumbotron bg-dark mt-3 text-center text-white">
 			<h1>Little Miss K</h1>
 			<p>Dresses for You</p>
