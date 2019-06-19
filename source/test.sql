@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 18, 2019 at 06:48 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Host: 127.0.0.1
+-- Generation Time: Feb 23, 2019 at 07:23 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecom_db`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
@@ -38,10 +38,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(1, 'Breakfast'),
-(2, 'Lunch'),
-(3, 'Dinner'),
-(4, 'Dessert');
+(1, 'Maxi Dress'),
+(2, 'Cocktail Dress'),
+(3, 'Vintage Dress'),
+(4, 'Summer Dress');
 
 -- --------------------------------------------------------
 
@@ -63,13 +63,9 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`id`, `name`, `description`, `price`, `image_path`, `category_id`) VALUES
-(1, 'Tapsilog', 'Marinated Beef with poached egg on garlic fried rice', '70.00', '../assets/images/tapsilog.jpg', 1),
-(2, 'Pares', 'Beef Broth with bone marrow and intestines', '69.50', '../assets/images/pares.jpg', 2),
-(4, 'Adobong Chicken', 'Chicken marinated in soy sauce and vinegar with black pepper and bayleaf', '420.00', '../assets/images/chicksAdobo.jpg', 3),
-(5, 'Vanilla Icecream', 'vanilla ice cream', '120.00', '../assets/images/icecream.jpg', 4),
-(6, 'Halo-Halo', 'A Cold dessert which is a concoction of crushed ice,evaporated milk and various ingredients including,among others,sweetened beans,coconut julienes,sago,gulaman (seaweed gelatin),pinipig rice,boiled root crops in cubes.', '200.00', '../assets/images/halo-halo.jpg', 4),
-(7, 'Champorado', 'Chocolate rice porridge', '80.00', '../assets/images/champorado.jpeg', 1),
-(11, 'maxi dress', 'light blue horizontal striped maxi dress', '250.00', '../assets/images/maxi-light-blue-horizontal-striped-S-M-240.jpg', 1);
+(12, 'maxi-001', 'Vintage 1950s Dress vintage 50s Marion McCoy grey yellow | Etsy', '200.00', '../assets/images/vin.jpg', 3),
+(13, 'maxi-001', 'S: Legth of Spaghetti Straps 26-28 cmï¼ŒBust:78-82 CMï¼ŒLength Of Dress:128 CM M: Legth of Spaghetti Straps 28-30ï¼ŒBust:82-86ï¼ŒLength Of Dress:129 L: Legth of Spaghetti Straps 28-3030-32ï¼ŒBust:86-90 Length', '500.00', '../assets/images/maxi.jpg', 1),
+(14, 'summer-001', 'Boho Front Tie Waist off shoulder floral romper dress', '900.00', '../assets/images/summer.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -86,16 +82,6 @@ CREATE TABLE `orders` (
   `payment_mode_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `users_id`, `transaction_code`, `purchase_date`, `status_id`, `payment_mode_id`) VALUES
-(1, 8, 'C63CF11E50969055-1547772396', '2019-01-17 17:46:36', 2, 1),
-(2, 8, '95699F04AE34A59F-1547777224', '2019-01-17 19:07:04', 3, 1),
-(3, 8, 'C6995E1F51130637-1547777246', '2019-01-17 19:07:26', 3, 1),
-(4, 8, 'D2AA841F633A75DB-1547777256', '2019-01-17 19:07:36', 3, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -109,21 +95,6 @@ CREATE TABLE `order_items` (
   `price` decimal(18,2) NOT NULL,
   `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order_items`
---
-
-INSERT INTO `order_items` (`id`, `order_id`, `item_id`, `price`, `quantity`) VALUES
-(1, 1, 5, '120.00', 1),
-(2, 1, 6, '200.00', 1),
-(3, 1, 4, '420.00', 1),
-(4, 2, 1, '70.00', 1),
-(5, 2, 2, '69.50', 1),
-(6, 2, 4, '420.00', 1),
-(7, 2, 5, '120.00', 1),
-(8, 3, 1, '70.00', 1),
-(9, 4, 4, '420.00', 1);
 
 -- --------------------------------------------------------
 
@@ -282,7 +253,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `orders`

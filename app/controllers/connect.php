@@ -1,9 +1,9 @@
 <?php 
 
-$host = 'db4free.net';
-$username = 'littlemisskdress';
-$password = 'littlemisskdress4u123';
-$dbname = 'ecomdress4u';
+$host = 'sql150.main-hosting.eu';
+$username = 'u663841285_dress';
+$password = 'dress4u';
+$dbname = 'u663841285_dress';
 
 
 // $host = 'localhost';
